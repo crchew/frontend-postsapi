@@ -103,6 +103,7 @@ app.post("/login", async (req, res) => {
       req.body.password,
       user.password
     );
+    
     if (!passwordIsValid) {
       return res.status(400).json({ auth: false, token: null });
     }
