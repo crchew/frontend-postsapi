@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import AddPost from "./components/AddPost";
-import Error404 from "../pages/404";
+import Error404 from "./pages/404";
 import EditPost from "./components/EditPost";
 import Layout from "./components/NavLayout";
 import isAuthenticated from "./authUtils";
