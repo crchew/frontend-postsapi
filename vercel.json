@@ -1,13 +1,10 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "api/*.mjs", "use": "@vercel/node" }
-    ],
-    "routes": [
-      { "src": "/api/(.*)", "dest": "/api/index.mjs" },
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
-      }
-    ]
-  }
+  "version": 2,
+  "rewrites": [
+    { "src": "/api/(.*)", "dest": "/api/index.mjs" },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
