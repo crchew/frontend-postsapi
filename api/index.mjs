@@ -8,7 +8,8 @@ const { Pool } = pkg;
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 // import { configDotenv } from "dotenv";
-import { createServerlessExpress } from "@vendia/serverless-express";
+import vendiapkg from '@vendia/serverless-express';
+const { createServerlessExpress } = vendiapkg;
 
 // configDotenv(); 
 const __filename = fileURLToPath(import.meta.url);
