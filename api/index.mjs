@@ -8,6 +8,7 @@ const { Pool } = pkg;
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { configDotenv } from "dotenv";
+import { createServerlessExpress } from "@vendia/serverless-express";
 
 configDotenv(); // load .env file
 const __filename = fileURLToPath(import.meta.url);
@@ -302,6 +303,9 @@ app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, "/404.html"));
 });
 
-app.listen(3000, () => {
-  console.log("App is listening on port 3000");
-});
+// app.listen(3000, () => {
+//   console.log("App is listening on port 3000");
+// });
+
+export const handler = createServerlessExpress({ app });
+
