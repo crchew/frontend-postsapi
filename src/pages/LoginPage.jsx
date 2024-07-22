@@ -10,8 +10,6 @@ export default function LoginPage() {
     password: "",
   });
 
-  const [error, setError] = useState(null);
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -31,7 +29,6 @@ export default function LoginPage() {
     } catch (error) {
       console.error("Login error:", error);
       // Display error message to user
-      setError("Login failed. Please check your credentials.");
       alert("Login failed. Please check your credentials.");
     }
   };
