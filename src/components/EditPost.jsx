@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
+import { configDotenv } from "dotenv";
+
+configDotenv(); 
+const { REACT_VERCEL_URL } = process.env;
 
 const EditPost = () => {
   const { postId } = useParams();
@@ -18,7 +22,7 @@ const EditPost = () => {
       const fetchPostData = async () => {
         try {
           const response = await fetch(
-            `http://localhost:3000/blogposts/${postId}`,
+            `${REACT_VERCEL_URL}/blogposts/${postId}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,

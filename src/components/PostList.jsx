@@ -5,6 +5,10 @@ import { Container } from "react-bootstrap";
 import addPostIcon from "../assets/icons8-add.png";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
+import { configDotenv } from "dotenv";
+
+configDotenv(); 
+const { REACT_VERCEL_URL } = process.env;
 
 function PostList() {
   const [posts, setPosts] = useState([]);
@@ -24,7 +28,7 @@ function PostList() {
     // If token is valid, fetch the posts published by user
     const fetchPosts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/blogposts", {
+        const response = await fetch(`${REACT_VERCEL_URL}/blogposts`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import { configDotenv } from "dotenv";
+
+configDotenv(); 
+const { REACT_VERCEL_URL } = process.env;
 
 function AddPost() {
   const [title, setTitle] = useState("");
@@ -28,7 +32,7 @@ function AddPost() {
     e.preventDefault();
     const newPost = { title, content, author };
     try {
-      const response = await fetch("http://localhost:3000/blogposts", {
+      const response = await fetch(`${REACT_VERCEL_URL}/blogposts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
