@@ -1,9 +1,9 @@
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
-import { configDotenv } from "dotenv";
+// import { configDotenv } from "dotenv";
 
-configDotenv(); 
+// configDotenv(); 
 const { REACT_VERCEL_URL } = process.env;
 
 export const login = (credentials) => {

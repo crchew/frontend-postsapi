@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
-import { configDotenv } from "dotenv";
+// import { configDotenv } from "dotenv";
 
-configDotenv(); 
+// configDotenv(); 
 const { REACT_VERCEL_URL } = process.env;
 
 function AddPost() {

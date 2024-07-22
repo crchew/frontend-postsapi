@@ -7,10 +7,10 @@ import cors from "cors";
 const { Pool } = pkg;
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { configDotenv } from "dotenv";
+// import { configDotenv } from "dotenv";
 import { createServerlessExpress } from "@vendia/serverless-express";
 
-configDotenv(); // load .env file
+// configDotenv(); 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 

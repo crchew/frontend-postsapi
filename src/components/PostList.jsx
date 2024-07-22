@@ -5,9 +5,9 @@ import { Container } from "react-bootstrap";
 import addPostIcon from "../assets/icons8-add.png";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
-import { configDotenv } from "dotenv";
+// import { configDotenv } from "dotenv";
 
-configDotenv(); 
+// configDotenv(); 
 const { REACT_VERCEL_URL } = process.env;
 
 function PostList() {
