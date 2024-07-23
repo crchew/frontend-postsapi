@@ -8,8 +8,7 @@ const { Pool } = pkg;
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 // import { configDotenv } from "dotenv";
-import * as serverlessExpress from "@codegenie/serverless-express";
-const { createServerlessExpress } = serverlessExpress;
+import { createServerlessExpress } from "@codegenie/serverless-express";
 
 // configDotenv();
 const __filename = fileURLToPath(import.meta.url);
