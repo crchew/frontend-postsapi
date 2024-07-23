@@ -4,12 +4,12 @@ export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 // import { configDotenv } from "dotenv";
 
 // configDotenv(); 
-const { REACT_APP_URL } = process.env;
+// const { REACT_APP_URL } = process.env;
 
 export const login = (credentials) => {
   return async (dispatch) => {
     try {
-      const response = await fetch(`${REACT_APP_URL}/login`, {
+      const response = await fetch(`${process.env.REACT_APP_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export const logout = () => {
 
 export const signup = (credentials) => {
   return async (dispatch) => {
-    const response = await fetch(`${REACT_APP_URL}/signup`, {
+    const response = await fetch(`${process.env.REACT_APP_URL}/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

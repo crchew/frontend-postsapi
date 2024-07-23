@@ -1,10 +1,10 @@
 import { jwtDecode } from "jwt-decode";
-const { REACT_APP_URL } = process.env;
+// const { REACT_APP_URL } = process.env;
 
 // Refresh access token to handle token expiration
 const refreshAccessToken = async () => {
   try {
-    const response = await fetch(`${REACT_APP_URL}/refresh-token`, {
+    const response = await fetch(`${process.env.REACT_APP_URL}/refresh-token`, {
       method: "POST",
       credentials: "include", // include cookies in the request
     });
