@@ -8,10 +8,10 @@ const { Pool } = pkg;
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 // import { configDotenv } from "dotenv";
-import vendiapkg from '@vendia/serverless-express';
+import vendiapkg from "@vendia/serverless-express";
 const { createServerlessExpress } = vendiapkg;
 
-// configDotenv(); 
+// configDotenv();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -105,7 +105,7 @@ app.post("/login", async (req, res) => {
       req.body.password,
       user.password
     );
-    
+
     if (!passwordIsValid) {
       return res.status(400).json({ auth: false, token: null });
     }
@@ -309,4 +309,3 @@ app.use((req, res) => {
 // });
 
 export const handler = createServerlessExpress({ app });
-
