@@ -8,6 +8,7 @@ export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 
 export const login = (credentials) => {
   return async (dispatch) => {
+    console.log(`${process.env.REACT_APP_URL}/login`)
     try {
       const response = await fetch(`${process.env.REACT_APP_URL}/login`, {
         method: "POST",
