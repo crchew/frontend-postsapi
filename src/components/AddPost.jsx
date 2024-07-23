@@ -5,7 +5,7 @@ import { jwtDecode } from "jwt-decode";
 // import { configDotenv } from "dotenv";
 
 // configDotenv(); 
-const { REACT_VERCEL_URL } = process.env;
+const { REACT_APP_URL } = process.env;
 
 function AddPost() {
   const [title, setTitle] = useState("");
@@ -32,7 +32,7 @@ function AddPost() {
     e.preventDefault();
     const newPost = { title, content, author };
     try {
-      const response = await fetch(`${REACT_VERCEL_URL}/blogposts`, {
+      const response = await fetch(`${REACT_APP_URL}/blogposts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

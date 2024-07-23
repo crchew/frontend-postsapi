@@ -8,7 +8,7 @@ import { format } from "date-fns";
 // import { configDotenv } from "dotenv";
 
 // configDotenv(); 
-const { REACT_VERCEL_URL } = process.env;
+const { REACT_APP_URL } = process.env;
 
 function PostList() {
   const [posts, setPosts] = useState([]);
@@ -28,7 +28,7 @@ function PostList() {
     // If token is valid, fetch the posts published by user
     const fetchPosts = async () => {
       try {
-        const response = await fetch(`${REACT_VERCEL_URL}/blogposts`, {
+        const response = await fetch(`${REACT_APP_URL}/blogposts`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -52,7 +52,7 @@ function PostList() {
   const deletePost = (id) => {
     if (window.confirm("Are you sure you want to delete this post?")) {
       console.log(`Deleting post with id: ${id}`);
-      fetch(`http://localhost:3000/blogposts/${id}`, {
+      fetch(`${REACT_APP_URL}/blogposts/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

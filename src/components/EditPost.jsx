@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 // import { configDotenv } from "dotenv";
 
 // configDotenv(); 
-const { REACT_VERCEL_URL } = process.env;
+const { REACT_APP_URL } = process.env;
 
 const EditPost = () => {
   const { postId } = useParams();
@@ -22,7 +22,7 @@ const EditPost = () => {
       const fetchPostData = async () => {
         try {
           const response = await fetch(
-            `${REACT_VERCEL_URL}/blogposts/${postId}`,
+            `${REACT_APP_URL}/blogposts/${postId}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -55,7 +55,7 @@ const EditPost = () => {
     const updatedPost = { title, content, author };
     try {
       const response = await fetch(
-        `http://localhost:3000/blogposts/${postId}`,
+        `${REACT_APP_URL}/blogposts/${postId}`,
         {
           method: "PUT",
           headers: {
