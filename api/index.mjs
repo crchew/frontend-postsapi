@@ -8,7 +8,7 @@ const { Pool } = pkg;
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 // import { configDotenv } from "dotenv";
-import * as serverlessExpress from "@vendia/serverless-express";
+import * as serverlessExpress from "@codegenie/serverless-express";
 const { createServerlessExpress } = serverlessExpress;
 
 // configDotenv();
