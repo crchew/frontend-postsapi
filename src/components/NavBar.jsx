@@ -1,12 +1,12 @@
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { SiBlogger } from "react-icons/si";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../authActions";
+import Icon from "../assets/icons8-blogger-48.png";
 
 export default function NavBar() {
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector(state => state.auth.authStatus);
+  const isAuthenticated = useSelector((state) => state.auth.authStatus);
 
   const handleLogoutClick = () => {
     dispatch(logout());
@@ -34,7 +34,9 @@ export default function NavBar() {
           height: "4rem",
         }}
       >
-        <SiBlogger />
+        <div>
+          <img src={Icon} alt="Navbar icon"/>
+        </div>
 
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
