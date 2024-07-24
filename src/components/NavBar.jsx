@@ -1,12 +1,12 @@
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { SiBlogger } from "react-icons/si";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../authActions";
-import isAuthenticated from "../authUtils";
 
 export default function NavBar() {
   const dispatch = useDispatch();
+  const isAuthenticated = useSelector(state => state.auth.authStatus);
 
   const handleLogoutClick = () => {
     dispatch(logout());
@@ -42,7 +42,7 @@ export default function NavBar() {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            {!isAuthenticated() ? (
+            {!isAuthenticated ? (
               <>
                 <Nav.Link
                   as={Link}

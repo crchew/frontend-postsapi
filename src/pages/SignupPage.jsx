@@ -81,6 +81,12 @@ export default function SignupPage() {
           <button type="submit" className="btn btn-dark">
             Sign Up
           </button>
+
+          <div className="mt-4">
+            <p>
+              Have an account? <a href="/login">Login now</a>
+            </p>
+          </div>
         </form>
       </Col>
     </Row>
@@ -92,7 +98,7 @@ const formStyle = {
   padding: "1rem",
   borderRadius: "5px",
   backgroundColor: "#fff",
-  margin: "2rem"
+  margin: "2rem",
 };
 
 const inputStyle = {

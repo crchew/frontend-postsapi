@@ -1,8 +1,7 @@
 import { LOGIN_SUCCESS, LOGOUT_SUCCESS, SIGNUP_SUCCESS } from "./authActions";
-import isAuthenticated from "./authUtils";
 
 const initialState = {
-  authStatus: isAuthenticated(),
+  authStatus: false,
   user: null,
 };
 

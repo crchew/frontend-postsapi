@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../authActions";
 import { useNavigate } from "react-router-dom";
+import isAuthenticated from "../authUtils";
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
@@ -24,7 +25,8 @@ export default function LoginPage() {
     e.preventDefault();
     const { username, password } = formData;
     try {
-      await dispatch(login({ username, password }))
+      await dispatch(login({ username, password }));
+      isAuthenticated();
       navigate("/");
     } catch (error) {
       console.error("Login error:", error);
@@ -65,6 +67,12 @@ export default function LoginPage() {
           <button type="submit" className="btn btn-dark">
             Log in
           </button>
+
+          <div className="mt-4">
+            <p>
+              No account yet? <a href="/signup">Sign up for one</a>
+            </p>
+          </div>
         </form>
       </Col>
     </Row>
@@ -76,7 +84,7 @@ const formStyle = {
   padding: "1rem",
   borderRadius: "5px",
   backgroundColor: "#fff",
-  margin: "2rem"
+  margin: "2rem",
 };
 
 const inputStyle = {
