@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-// import { configDotenv } from "dotenv";
-
-// configDotenv(); 
-// const { REACT_APP_URL } = process.env;
 
 const EditPost = () => {
   const { postId } = useParams();
@@ -22,7 +18,7 @@ const EditPost = () => {
       const fetchPostData = async () => {
         try {
           const response = await fetch(
-            `${process.env.REACT_APP_URL}/blogposts/${postId}`,
+            `https://backend-postsapi.vercel.app/blogposts/${postId}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -55,7 +51,7 @@ const EditPost = () => {
     const updatedPost = { title, content, author };
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_URL}/blogposts/${postId}`,
+        `https://backend-postsapi.vercel.app/blogposts/${postId}`,
         {
           method: "PUT",
           headers: {

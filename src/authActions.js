@@ -1,16 +1,11 @@
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
-// import { configDotenv } from "dotenv";
-
-// configDotenv(); 
-// const { REACT_APP_URL } = process.env;
 
 export const login = (credentials) => {
   return async (dispatch) => {
-    console.log(`${process.env.REACT_APP_URL}/login`)
     try {
-      const response = await fetch(`${process.env.REACT_APP_URL}/login`, {
+      const response = await fetch("https://backend-postsapi.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +37,7 @@ export const logout = () => {
 
 export const signup = (credentials) => {
   return async (dispatch) => {
-    const response = await fetch(`${process.env.REACT_APP_URL}/signup`, {
+    const response = await fetch("https://backend-postsapi.vercel.app/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

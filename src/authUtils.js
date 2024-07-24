@@ -4,7 +4,7 @@ import { jwtDecode } from "jwt-decode";
 // Refresh access token to handle token expiration
 const refreshAccessToken = async () => {
   try {
-    const response = await fetch(`${process.env.REACT_APP_URL}/refresh-token`, {
+    const response = await fetch("https://backend-postsapi.vercel.app/refresh-token", {
       method: "POST",
       credentials: "include", // include cookies in the request
     });

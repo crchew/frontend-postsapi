@@ -5,10 +5,6 @@ import { Container } from "react-bootstrap";
 import addPostIcon from "../assets/icons8-add.png";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
-// import { configDotenv } from "dotenv";
-
-// configDotenv(); 
-// const { REACT_APP_URL } = process.env;
 
 function PostList() {
   const [posts, setPosts] = useState([]);
@@ -28,7 +24,7 @@ function PostList() {
     // If token is valid, fetch the posts published by user
     const fetchPosts = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_URL}/blogposts`, {
+        const response = await fetch("https://backend-postsapi.vercel.app/blogposts", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -52,7 +48,7 @@ function PostList() {
   const deletePost = (id) => {
     if (window.confirm("Are you sure you want to delete this post?")) {
       console.log(`Deleting post with id: ${id}`);
-      fetch(`${process.env.REACT_APP_URL}/blogposts/${id}`, {
+      fetch(`https://backend-postsapi.vercel.app/blogposts/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
