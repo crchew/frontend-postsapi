@@ -1,12 +1,17 @@
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../authActions";
+import { checkAuth, logout } from "../authActions";
 import Icon from "../assets/icons8-blogger-48.png";
+import { useEffect } from "react";
 
 export default function NavBar() {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.authStatus);
+
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, [dispatch]);
 
   const handleLogoutClick = () => {
     dispatch(logout());
@@ -35,7 +40,7 @@ export default function NavBar() {
         }}
       >
         <div>
-          <img src={Icon} alt="Navbar icon"/>
+          <img src={Icon} alt="Navbar icon" />
         </div>
 
         <Navbar.Toggle

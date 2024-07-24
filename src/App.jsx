@@ -7,22 +7,24 @@ import AddPost from "./components/AddPost";
 import Error404 from "./pages/404";
 import EditPost from "./components/EditPost";
 import Layout from "./components/NavLayout";
-import isAuthenticated from "./authUtils";
+import { checkAuth } from "./authActions";
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function App() {
   const [authChecked, setAuthChecked] = useState(false);
-  const [isAuth, setIsAuth] = useState(false);
+  const isAuth = useSelector((state) => state.auth.authStatus);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const checkAuth = async () => {
-      const auth = await isAuthenticated();
-      setIsAuth(auth);
+    const verifyAuth = async () => {
+      await dispatch(checkAuth());
       setAuthChecked(true);
     };
 
-    checkAuth();
-  }, []);
+    verifyAuth();
+  }, [dispatch]);
 
   if (!authChecked) {
     return <div>Loading...</div>; // Or any loading indicator
@@ -37,21 +39,15 @@ export default function App() {
             <Route path="/signup" element={<SignupPage />} />
             <Route
               path="/newpost"
-              element={
-                isAuth ? <AddPost /> : <Navigate to="/login" />
-              }
+              element={isAuth ? <AddPost /> : <Navigate to="/login" />}
             />
             <Route
               path="/edit/:postId"
-              element={
-                isAuth ? <EditPost /> : <Navigate to="/login" />
-              }
+              element={isAuth ? <EditPost /> : <Navigate to="/login" />}
             />
             <Route
               path="/"
-              element={
-                isAuth ? <HomePage /> : <Navigate to="/login" />
-              }
+              element={isAuth ? <HomePage /> : <Navigate to="/login" />}
             />
             <Route path="*" element={<Error404 />} />
           </Routes>

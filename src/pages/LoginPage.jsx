@@ -1,9 +1,8 @@
 import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../authActions";
+import { checkAuth, login } from "../authActions";
 import { useNavigate } from "react-router-dom";
-import isAuthenticated from "../authUtils";
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
@@ -26,7 +25,7 @@ export default function LoginPage() {
     const { username, password } = formData;
     try {
       await dispatch(login({ username, password }));
-      isAuthenticated();
+      dispatch(checkAuth());
       navigate("/");
     } catch (error) {
       console.error("Login error:", error);
