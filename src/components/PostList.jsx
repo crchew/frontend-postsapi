@@ -119,8 +119,7 @@ function PostList() {
                       marginLeft: "1rem",
                       marginRight: "4rem",
                       padding: "2rem",
-                      border: "solid 0.1rem",
-                      borderRadius: "25px",
+                      border: "1px solid #ccc",
                     }}
                   >
                     <ul>

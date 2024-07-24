@@ -37,7 +37,7 @@ export default function LoginPage() {
     <Row style={{ marginTop: "8rem", textAlign: "center" }}>
       <Col>
         <h1> Have an account? Log in now. </h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={formStyle}>
           <div className="p-4">
             <label className="pr-2">Username:</label>
             <input
@@ -45,6 +45,7 @@ export default function LoginPage() {
               name="username"
               value={formData.username}
               onChange={handleChange}
+              style={inputStyle}
               required
             />
           </div>
@@ -56,6 +57,7 @@ export default function LoginPage() {
               name="password"
               value={formData.password}
               onChange={handleChange}
+              style={inputStyle}
               required
             />
           </div>
@@ -68,3 +70,21 @@ export default function LoginPage() {
     </Row>
   );
 }
+
+const formStyle = {
+  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+  padding: "1rem",
+  borderRadius: "5px",
+  backgroundColor: "#fff",
+  margin: "2rem"
+};
+
+const inputStyle = {
+  width: "30%",
+  padding: "10px",
+  margin: "10px 0",
+  boxSizing: "border-box",
+  border: "1px solid #ccc",
+  borderRadius: "0px",
+  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+};

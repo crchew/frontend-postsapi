@@ -1,13 +1,15 @@
 import { jwtDecode } from "jwt-decode";
-// const { REACT_APP_URL } = process.env;
 
 // Refresh access token to handle token expiration
 const refreshAccessToken = async () => {
   try {
-    const response = await fetch("https://backend-postsapi.vercel.app/refresh-token", {
-      method: "POST",
-      credentials: "include", // include cookies in the request
-    });
+    const response = await fetch(
+      "https://backend-postsapi.vercel.app/refresh-token",
+      {
+        method: "POST",
+        credentials: "include", // include cookies in the request
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Failed to refresh token");
@@ -50,6 +52,7 @@ const isAuthenticated = async () => {
       }
     }
 
+    console.log("User isAuthenticated");
     return true;
   } catch (error) {
     if (error.name === "TokenExpiredError") {

@@ -85,7 +85,7 @@ const EditPost = () => {
     <Container>
       <div style={{ marginTop: "10rem", marginLeft: "6rem" }}>
         <h2>Edit Your Post</h2>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} style={formStyle}>
           <Form.Group
             controlId="title"
             style={{ marginLeft: "2rem", marginTop: "4rem" }}
@@ -97,12 +97,7 @@ const EditPost = () => {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              style={{
-                height: "0.5rem",
-                borderRadius: "25px",
-                fontSize: "1rem",
-                padding: "1.5rem",
-              }}
+              style={inputStyle}
             />
           </Form.Group>
 
@@ -117,12 +112,7 @@ const EditPost = () => {
               as="textarea"
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              style={{
-                height: "10rem",
-                borderRadius: "25px",
-                fontSize: "1rem",
-                padding: "1.5rem",
-              }}
+              style={contentInputStyle}
             />
           </Form.Group>
 
@@ -137,12 +127,8 @@ const EditPost = () => {
               type="text"
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
-              style={{
-                height: "0.5rem",
-                borderRadius: "25px",
-                fontSize: "1rem",
-                padding: "1.5rem",
-              }}
+              style={inputStyle}
+              disabled
             />
           </Form.Group>
 
@@ -176,6 +162,39 @@ const EditPost = () => {
       </div>
     </Container>
   );
+};
+
+const formStyle = {
+  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+  padding: "1rem",
+  borderRadius: "5px",
+  backgroundColor: "#fff",
+  marginLeft: "2rem",
+  marginTop: "4rem",
+};
+
+const inputStyle = {
+  width: "100%",
+  padding: "1.5rem",
+  margin: "10px 0",
+  boxSizing: "border-box",
+  border: "1px solid #ccc",
+  borderRadius: "0px",
+  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+  height: "0.5rem",
+  fontSize: "1rem",
+};
+
+const contentInputStyle = {
+  width: "100%",
+  padding: "1.5rem",
+  margin: "10px 0",
+  height: "10rem",
+  boxSizing: "border-box",
+  border: "1px solid #ccc",
+  borderRadius: "0px",
+  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+  fontSize: "1rem",
 };
 
 export default EditPost;

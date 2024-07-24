@@ -40,7 +40,7 @@ export default function SignupPage() {
       <Col>
         <h1>New here? Sign up for an account.</h1>
 
-        <form onSubmit={handleSubmit} autoComplete="on">
+        <form onSubmit={handleSubmit} autoComplete="on" style={formStyle}>
           <div className="p-4">
             <label className="pr-2">Username:</label>
             <input
@@ -49,6 +49,7 @@ export default function SignupPage() {
               value={formData.username}
               autoComplete="username"
               onChange={handleChange}
+              style={inputStyle}
               required
             />
           </div>
@@ -61,6 +62,7 @@ export default function SignupPage() {
               value={formData.password}
               autoComplete="current password"
               onChange={handleChange}
+              style={inputStyle}
               required
             />
           </div>
@@ -72,6 +74,7 @@ export default function SignupPage() {
               value={formData.email}
               autoComplete="user email"
               onChange={handleChange}
+              style={inputStyle}
               required
             />
           </div>
@@ -83,3 +86,21 @@ export default function SignupPage() {
     </Row>
   );
 }
+
+const formStyle = {
+  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+  padding: "1rem",
+  borderRadius: "5px",
+  backgroundColor: "#fff",
+  margin: "2rem"
+};
+
+const inputStyle = {
+  width: "30%",
+  padding: "10px",
+  margin: "10px 0",
+  boxSizing: "border-box",
+  border: "1px solid #ccc",
+  borderRadius: "0px",
+  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+};
