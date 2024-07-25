@@ -139,7 +139,6 @@ const EditPost = () => {
                 marginRight: "2rem",
                 marginTop: "2rem",
                 padding: "0.7rem",
-                borderRadius: "10px",
               }}
             >
               Publish
@@ -148,11 +147,10 @@ const EditPost = () => {
             <Button
               onClick={handleBackClick}
               style={{
-                marginRight: "15rem",
+                marginRight: "1rem",
                 marginTop: "2rem",
                 padding: "0.7rem",
-                borderRadius: "10px",
-                backgroundColor: "gray",
+                backgroundColor: "#3d3d3d",
               }}
             >
               Back
