@@ -41,7 +41,9 @@ export default function NavBar() {
         }}
       >
         <div>
-          <img src={Icon} alt="Navbar icon" />
+          <a href="/">
+            <img src={Icon} alt="Navbar icon" />
+          </a>
         </div>
 
         <Navbar.Toggle
