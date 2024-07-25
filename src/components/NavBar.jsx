@@ -23,8 +23,7 @@ export default function NavBar() {
       style={{
         backgroundColor: "#fff",
         color: "#244855",
-        position: "fixed",
-        zIndex: 1,
+        position: "relative",
         top: 0,
         width: "100vw",
         paddingBottom: "1rem",
@@ -61,6 +60,7 @@ export default function NavBar() {
                     color: "var(--font-color)",
                     padding: "1rem",
                     textDecoration: "none",
+                    textAlign: "right",
                   }}
                 >
                   Login
@@ -73,6 +73,7 @@ export default function NavBar() {
                     color: "var(--font-color)",
                     padding: "1rem",
                     textDecoration: "none",
+                    textAlign: "right",
                   }}
                 >
                   Signup
@@ -86,6 +87,7 @@ export default function NavBar() {
                   color: "var(--font-color)",
                   padding: "1rem",
                   textDecoration: "none",
+                  textAlign: "right",
                 }}
                 onClick={handleLogoutClick}
               >
