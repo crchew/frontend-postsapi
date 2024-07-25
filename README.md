@@ -21,6 +21,6 @@ Backend: Express.js, Node.js
 Database: PostgreSQL (hosted on Neon)
 
 ### Deployment:
-Frontend: Netlify (https://frontend-postsapi.netlify.app/) 
+Frontend: Netlify (https://frontend-blog-postsapi.netlify.app/) 
 
 Backend: Vercel (https://backend-postsapi.vercel.app/) Repo: https://github.com/crchew/backend-postsapi
