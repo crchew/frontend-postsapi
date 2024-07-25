@@ -25,6 +25,27 @@ export default function SignupPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { username, password, email } = formData;
+
+    // Form values validation
+    if (username.length < 3) {
+      alert("Username must be at least 3 characters long.");
+      return;
+    }
+
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      alert(
+        "Password must be at least 8 characters long and contain both letters and numbers."
+      );
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
     try {
       await dispatch(signup({ username, password, email })).then(navigate("/"));
     } catch (error) {

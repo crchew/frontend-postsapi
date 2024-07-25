@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import addPostIcon from "../assets/icons8-add.png";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
+import PostListImg from "../assets/daria-nepriakhina-p6ac4ss5vVM-unsplash.jpg";
 
 function PostList() {
   const [posts, setPosts] = useState([]);
@@ -90,8 +91,8 @@ function PostList() {
 
               {/* Cat image */}
               <img
-                src="../src/assets/daria-nepriakhina-p6ac4ss5vVM-unsplash.jpg"
-                alt="cat on notebook"
+                src={PostListImg}
+                alt="Cat on notebook"
                 width="60%"
                 height="auto"
               />

@@ -1,4 +1,4 @@
-import Photo from "../assets/alexander-b-FntgSXIlSwM-unsplash.jpg";
+import Photo from "../assets/daria-nepriakhina-p6ac4ss5vVM-unsplash.jpg";
 
 const Error404 = () => {
   return (
