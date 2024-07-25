@@ -21,12 +21,13 @@ export default function NavBar() {
     <Navbar
       expand="lg"
       style={{
-        backgroundColor: "#244855",
-        color: "#fff",
+        backgroundColor: "#fff",
+        color: "#244855",
         position: "fixed",
         zIndex: 1,
         top: 0,
         width: "100vw",
+        paddingBottom: "1rem",
       }}
     >
       <Container
