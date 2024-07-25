@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
@@ -35,6 +36,7 @@ export default function App() {
       <BrowserRouter>
         <Layout>
           <Routes>
+            <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route
@@ -45,10 +47,7 @@ export default function App() {
               path="/edit/:postId"
               element={isAuth ? <EditPost /> : <Navigate to="/login" />}
             />
-            <Route
-              path="/"
-              element={isAuth ? <HomePage /> : <Navigate to="/login" />}
-            />
+            <Route path="/" element={isAuth ? <HomePage /> : <LandingPage />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
         </Layout>
