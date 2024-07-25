@@ -100,7 +100,7 @@ const LandingPage = () => {
           <Row>
             <Col>
               <p>
-                &copy; {new Date().getFullYear()} Your Creative Corner. All
+                &copy; {new Date().getFullYear()} Creative Corner. All
                 Rights Reserved.
               </p>
               <p>
